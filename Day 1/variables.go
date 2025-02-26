@@ -23,7 +23,7 @@ func sqrt() {
 }
 
 var c = 1
-var python = true
+var python = false
 var java bool
 
 func vars() {
