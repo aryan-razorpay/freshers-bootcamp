@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+</head>
+<body>
+    <h1>Random Quote Generator</h1>
+    <div id="quote" class="quote-box">Loading...</div>
+    <br>
+    <button onclick="getRandomQuote()">Get a New Quote</button>
+
+    <script>
+        // Fetch a random quote from the server
+        function getRandomQuote() {
+            fetch('/random-quote')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('quote').innerText = data;
+                })
+                .catch(error => {
+                    console.error("Error fetching the quote: ", error);
+                });
+        }
+
+        // Load an initial quote when the page loads
+        window.onload = function() {
+            getRandomQuote();
+        };
+    </script>
+</body>
+</html>

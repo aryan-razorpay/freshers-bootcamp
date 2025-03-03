@@ -14,5 +14,6 @@ func main() {
 	for i:=0; i<=10;i++{
 		go task(i)
 	}
+	// fmt.Println("Doing tasks")
 	time.Sleep(time.Second*2)
 }
